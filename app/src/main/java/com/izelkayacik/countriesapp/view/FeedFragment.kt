@@ -1,12 +1,11 @@
-package com.izelkayacik.countriesapp
+package com.izelkayacik.countriesapp.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_feed.*
+import com.izelkayacik.countriesapp.R
 
 
 class FeedFragment : Fragment() {
@@ -27,10 +26,12 @@ class FeedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*
         fragment_button.setOnClickListener {
             val action = FeedFragmentDirections.actionFeedFragmentToCountryFragment()
             Navigation.findNavController(it).navigate(action)
         }
+         */
     }
 
 }
