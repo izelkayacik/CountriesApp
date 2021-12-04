@@ -22,7 +22,7 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
         return CountryViewHolder(view)
     }
 
-    //item_country deki itemlara ulaştıgımız yersözlerini söylemek döneceksin diye ödüm kopyuor
+    //item_country deki itemlara ulaştıgımız yer
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         holder.view.name.text = countryList[position].countryName
         holder.view.region.text = countryList[position].countryRegion
