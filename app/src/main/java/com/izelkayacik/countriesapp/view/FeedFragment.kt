@@ -1,6 +1,7 @@
 package com.izelkayacik.countriesapp.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -37,6 +38,7 @@ class FeedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.d("Service" , "FeedFragmentonCreate")
         //Providers ile hangi ViewModelin sınıfı ile çalışmak istediğimizi söylüyoruz
         viewModel = ViewModelProviders.of(this).get(FeedViewModel::class.java)
         viewModel.refreshData()
@@ -50,6 +52,15 @@ class FeedFragment : Fragment() {
             Navigation.findNavController(it).navigate(action)
         }
          */
+
+        swipeRefreshLayout.setOnRefreshListener {
+            countryList.visibility = View.GONE
+            countryError.visibility = View.GONE
+            countryLoading.visibility = View.VISIBLE
+            viewModel.refreshData()
+            swipeRefreshLayout.isRefreshing = false
+        }
+
         observeLiveData()
 
     }

@@ -33,7 +33,7 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
         }
     }
 
-    //kaç tane row oluşturacağımızı söylediğimiz yer
+    //kaç tane row data oluşturacağımızı söylediğimiz yer
     override fun getItemCount(): Int {
         return countryList.size
     }
