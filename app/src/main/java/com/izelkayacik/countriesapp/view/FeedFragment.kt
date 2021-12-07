@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.izelkayacik.countriesapp.R
 import com.izelkayacik.countriesapp.adapter.CountryAdapter
 import com.izelkayacik.countriesapp.model.Country
-import com.izelkayacik.countriesapp.util.myExtension
 import com.izelkayacik.countriesapp.viewmodel.FeedViewModel
 import kotlinx.android.synthetic.main.fragment_feed.*
 

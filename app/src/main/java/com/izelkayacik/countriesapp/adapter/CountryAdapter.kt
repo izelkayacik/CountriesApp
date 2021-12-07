@@ -7,6 +7,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.izelkayacik.countriesapp.R
 import com.izelkayacik.countriesapp.model.Country
+import com.izelkayacik.countriesapp.util.downloadFromUrl
+import com.izelkayacik.countriesapp.util.placeholderProgressBar
 import com.izelkayacik.countriesapp.view.FeedFragmentDirections
 import kotlinx.android.synthetic.main.item_country.view.*
 
@@ -31,6 +33,9 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
             val action = FeedFragmentDirections.actionFeedFragmentToCountryFragment()
             Navigation.findNavController(it).navigate(action)
         }
+
+        holder.view.imageView.downloadFromUrl(countryList[position].imageUrl, placeholderProgressBar(holder.view.context))
+
     }
 
     //kaç tane row data oluşturacağımızı söylediğimiz yer
